@@ -35,7 +35,7 @@ public class PlayerController2 : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
         Vector3 moveDir = new Vector3(x, 0, y);
-        _rigidBody.velocity = moveDir;
+        _rigidBody.velocity = moveDir * speed;
 
         if (x != 0 && x < 0)
         {
