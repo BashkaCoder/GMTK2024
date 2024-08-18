@@ -9,13 +9,11 @@ namespace BananaForScale.UI
     {
         [SerializeField] private Health _health;
         [SerializeField] private Image _fill;
-        [SerializeField] private GameObject _bar;
         [SerializeField] private TMP_Text _healthText;
 
         private void Start()
         {
             UpdateBar();
-            SetBarImageFill(_health.HealthPoints / _health.MaxHealthPoints);
         }
 
         public void UpdateBar()
