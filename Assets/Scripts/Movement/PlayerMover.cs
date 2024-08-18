@@ -27,6 +27,7 @@ namespace BananaForScale.Movement
         {
             var movement = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
             _rigidBody.MovePosition(_rigidBody.position + _speed * Time.deltaTime * movement.normalized);
+            //_rigidBody
         }
     }
 }

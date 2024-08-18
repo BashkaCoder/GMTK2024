@@ -1,14 +1,13 @@
+using UnityEngine;
 using BananaForScale.Combat;
 using BananaForScale.Movement;
-using System;
-using UnityEngine;
 
 namespace BananaForScale.Control
 {
     public class AIController : MonoBehaviour
     {
         [Header("Attack Behaviour")]
-        [SerializeField, Range(1f, 100f), Tooltip("Радиус обнаружения врага.")]
+        [SerializeField, Range(1f, 100f), Tooltip("пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ.")]
         private float _detectionRadius = 5f;
         [SerializeField] private float _allowedDistanceDeparture = 30f;
 
