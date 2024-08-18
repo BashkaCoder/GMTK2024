@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -26,7 +27,12 @@ public class EnemyZone : MonoBehaviour
     {
         _zoneManager = zoneManager;
     }
-    
+
+    private void Start()
+    {
+        SpawnCollectible(transform);
+    }
+
     public void AddScore(Transform enemyTransform)
     {
         if (++_fedEnemyCount == maxEnemyCount)
