@@ -37,6 +37,7 @@ public class EnemyZoneManager : MonoBehaviour
             var zone = pair.Value;
             zone.Initialize(this);
         }
+
         _bossZone.Initialize(this);
         _totemIndicator.UpdateImage(0);
     }

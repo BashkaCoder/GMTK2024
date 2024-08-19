@@ -27,6 +27,7 @@ namespace BananaForScale.Attributes
             HealthPoints = Mathf.Max(HealthPoints - damage, 0);
             if (HealthPoints == 0)
             {
+                print("DIE");
                 _onDie.Invoke();
                 Die();
             }

@@ -1,13 +1,12 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class BossGate : MonoBehaviour
 {
     [SerializeField] private BoxCollider _collider;
-    
+
     [Header("Zone Manager")]
     [SerializeField] private EnemyZoneManager zoneManager;
-    
+
     [Header("Gate states")]
     [SerializeField] private Sprite closedSprite;
     [SerializeField] private Sprite openSprite;
@@ -21,8 +20,7 @@ public class BossGate : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag("Player"))
-            return;
+        if (!other.CompareTag("Player")) return;
 
         if (zoneManager.AllCollectiblesCollected())
         {
@@ -30,11 +28,10 @@ public class BossGate : MonoBehaviour
             _image.sprite = openSprite;
         }
     }
-    
+
     private void OnTriggerExit(Collider other)
     {
-        if (!other.CompareTag("Player"))
-            return;
+        if (!other.CompareTag("Player")) return;
 
         _image.sprite = closedSprite;
     }

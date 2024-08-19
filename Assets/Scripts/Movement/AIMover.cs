@@ -8,29 +8,11 @@ namespace BananaForScale.Movement
         [SerializeField] private Transform _target;
         [SerializeField] private float _maxSpeed = 6f;
         private NavMeshAgent _navMeshAgent;
-        //private Animator _animator;
 
         private void Awake()
         {
             _navMeshAgent = GetComponent<NavMeshAgent>();
-            //_animator = GetComponent<Animator>();
         }
-
-        private void Update()
-        {
-            //_navMeshAgent.enabled = !_health.IsDead;
-            //UpdateAnimator();
-        }
-
-        //private void UpdateAnimator()
-        //{
-        //    //Vector3 velocity = _navMeshAgent.velocity;
-        //    //Vector3 localVelocity = transform.InverseTransformDirection(velocity);
-        //    //float speed = localVelocity.z;
-
-        //    //const string ForwardSpeed = "ForwardSpeed";
-        //    //_animator.SetFloat(ForwardSpeed, speed);
-        //}
 
         public void StartMoveAction(Vector3 destination, float speedFraction = 1f)
         {
