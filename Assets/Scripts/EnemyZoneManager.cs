@@ -9,12 +9,11 @@ public class EnemyZoneManager : MonoBehaviour
     [SerializeField] private EnemyZone wolfZone;
     [SerializeField] private EnemyZone boarZone;
     [SerializeField] private EnemyZone spiderZone;
-    [SerializeField] private BossZone _bossZone;
 
     [FormerlySerializedAs("collectiblesMaxCount")]
     [Header("Collectibles")]
-    [SerializeField] private int zonesMaxCount;
-    private int _zonesCleared;
+    [SerializeField] private static int zonesMaxCount;
+    private static int _zonesCleared;
 
     [Header("Totems")]
     [SerializeField] private TotemIndicator _totemIndicator;
@@ -37,7 +36,6 @@ public class EnemyZoneManager : MonoBehaviour
             var zone = pair.Value;
             zone.Initialize(this);
         }
-        _bossZone.Initialize(this);
         _totemIndicator.UpdateImage(0);
     }
 
@@ -53,5 +51,5 @@ public class EnemyZoneManager : MonoBehaviour
         _totemIndicator.UpdateImage(_zonesCleared);
     }
 
-    public bool AllCollectiblesCollected() => _zonesCleared == zonesMaxCount;
+    public static bool AllCollectiblesCollected() => _zonesCleared == zonesMaxCount;
 }

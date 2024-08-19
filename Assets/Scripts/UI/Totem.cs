@@ -5,6 +5,7 @@ public class Totem : MonoBehaviour
 {
     [SerializeField] private TMP_Text statisticText;
     [SerializeField] private TMP_Text interactionText;
+    [SerializeField] private Teleport _teleportToOpen;
 
     private EnemyZone _zone;
     private bool _keyGathered;
@@ -48,6 +49,7 @@ public class Totem : MonoBehaviour
             _keyGathered = true;
             interactionText.gameObject.SetActive(false);
             _canInteract = false;
+            _teleportToOpen.canEnter = true;
         }
     }
 

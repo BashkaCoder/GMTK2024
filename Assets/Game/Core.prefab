@@ -419,11 +419,11 @@ MonoBehaviour:
   m_TransparentLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_MinimumDistanceFromTarget: 0.1
+  m_MinimumDistanceFromTarget: 0.2
   m_AvoidObstacles: 1
   m_DistanceLimit: 0
   m_MinimumOcclusionTime: 0
-  m_CameraRadius: 0.6
+  m_CameraRadius: 0.1
   m_Strategy: 0
   m_MaximumEffort: 4
   m_SmoothingTime: 1
@@ -1585,6 +1585,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _image: {fileID: 1199818588926217525}
+  _sprites: []
 --- !u!1 &6226273040904930972
 GameObject:
   m_ObjectHideFlags: 0
@@ -1797,7 +1798,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 10
-  m_NavMeshData: {fileID: 23800000, guid: e787e4052f3ef4849ad84a9eea14daf9, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 0740ba5b37419f5499375dcb5054a791, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1 &7211976676255964520
 GameObject:
@@ -2037,7 +2038,7 @@ Transform:
   m_GameObject: {fileID: 7431022291265848349}
   serializedVersion: 2
   m_LocalRotation: {x: 0.38268343, y: -0, z: -0, w: 0.92387956}
-  m_LocalPosition: {x: -16, y: 8.501068, z: 69.42893}
+  m_LocalPosition: {x: 57.6, y: 8.501068, z: 60.528934}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
