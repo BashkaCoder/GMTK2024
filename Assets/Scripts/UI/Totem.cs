@@ -1,4 +1,3 @@
-using System;
 using TMPro;
 using UnityEngine;
 
@@ -6,7 +5,7 @@ public class Totem : MonoBehaviour
 {
     [SerializeField] private TMP_Text statisticText;
     [SerializeField] private TMP_Text interactionText;
-    
+
     private EnemyZone _zone;
     private bool _keyGathered;
     private bool _canInteract;
@@ -26,12 +25,12 @@ public class Totem : MonoBehaviour
         statisticText.gameObject.SetActive(true);
         if (!other.CompareTag("Player"))
             return;
-        
+
         if (_keyGathered)
         {
             interactionText.gameObject.SetActive(false);
         }
-        
+
         if (_canInteract)
         {
             interactionText.gameObject.SetActive(true);

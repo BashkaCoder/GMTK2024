@@ -615,11 +615,11 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6579140715543427374, guid: 4bd7742d2cb6a71479aa406d9a93f984,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 74792896509049774}
+      addedObject: {fileID: 8396086372347601490}
     - targetCorrespondingSourceObject: {fileID: 6579140715543427374, guid: 4bd7742d2cb6a71479aa406d9a93f984,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8396086372347601490}
+      addedObject: {fileID: 74792896509049774}
     - targetCorrespondingSourceObject: {fileID: 6579140715543427374, guid: 4bd7742d2cb6a71479aa406d9a93f984,
         type: 3}
       insertIndex: -1
@@ -627,11 +627,11 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6579140715543427374, guid: 4bd7742d2cb6a71479aa406d9a93f984,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 686095092811105505}
+      addedObject: {fileID: 8314161241415977664}
     - targetCorrespondingSourceObject: {fileID: 6579140715543427374, guid: 4bd7742d2cb6a71479aa406d9a93f984,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8314161241415977664}
+      addedObject: {fileID: 686095092811105505}
   m_SourcePrefab: {fileID: 100100000, guid: 4bd7742d2cb6a71479aa406d9a93f984, type: 3}
 --- !u!1 &4155918100796815497 stripped
 GameObject:
@@ -661,20 +661,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &74792896509049774
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4155918100796815497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92068a0058b2b364f82d317494b94208, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _target: {fileID: 0}
-  _maxSpeed: 6
 --- !u!114 &8396086372347601490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -694,6 +680,20 @@ MonoBehaviour:
   _waypointTolerance: 1
   _waypointDwellTime: 3
   _patrolSpeedFraction: 0.2
+--- !u!114 &74792896509049774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4155918100796815497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92068a0058b2b364f82d317494b94208, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 0}
+  _maxSpeed: 6
 --- !u!114 &2063080696825871985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -708,19 +708,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _timeBetweenAttacks: 2
   AttackRange: 2
-  HitDamage: 2
---- !u!114 &686095092811105505
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4155918100796815497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b0785859251f24458cb422017360a0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  HitDamage: 10
 --- !u!114 &8314161241415977664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -749,6 +737,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _enemyType: 0
+--- !u!114 &686095092811105505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4155918100796815497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b0785859251f24458cb422017360a0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &8440512506171143607 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1712420668840670224, guid: 4bd7742d2cb6a71479aa406d9a93f984,

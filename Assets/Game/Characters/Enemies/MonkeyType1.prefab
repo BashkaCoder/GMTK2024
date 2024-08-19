@@ -18,6 +18,11 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 2.43
       objectReference: {fileID: 0}
+    - target: {fileID: 2063080696825871985, guid: 51eb2cd2d43968b4ba0b777557bc3217,
+        type: 3}
+      propertyPath: HitDamage
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 3326703672871430673, guid: 51eb2cd2d43968b4ba0b777557bc3217,
         type: 3}
       propertyPath: m_Size.x
@@ -57,7 +62,7 @@ PrefabInstance:
     - target: {fileID: 4155918100796815497, guid: 51eb2cd2d43968b4ba0b777557bc3217,
         type: 3}
       propertyPath: m_Name
-      value: Wolf
+      value: MonkeyType1
       objectReference: {fileID: 0}
     - target: {fileID: 4247648742070687004, guid: 51eb2cd2d43968b4ba0b777557bc3217,
         type: 3}
@@ -73,6 +78,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BaseOffset
       value: 0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 4808070565373014832, guid: 51eb2cd2d43968b4ba0b777557bc3217,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4808070565373014832, guid: 51eb2cd2d43968b4ba0b777557bc3217,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4808070565373014832, guid: 51eb2cd2d43968b4ba0b777557bc3217,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5409272163346672658, guid: 51eb2cd2d43968b4ba0b777557bc3217,
         type: 3}
@@ -103,7 +123,7 @@ PrefabInstance:
     - target: {fileID: 8314161241415977664, guid: 51eb2cd2d43968b4ba0b777557bc3217,
         type: 3}
       propertyPath: _maxSatietyPoints
-      value: 100
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 8396086372347601490, guid: 51eb2cd2d43968b4ba0b777557bc3217,
         type: 3}

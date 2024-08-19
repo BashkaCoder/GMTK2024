@@ -335,10 +335,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6579140715543427374, guid: 4bd7742d2cb6a71479aa406d9a93f984,
         type: 3}
-      insertIndex: 4
-      addedObject: {fileID: 2680315768064865587}
-    - targetCorrespondingSourceObject: {fileID: 6579140715543427374, guid: 4bd7742d2cb6a71479aa406d9a93f984,
-        type: 3}
       insertIndex: -1
       addedObject: {fileID: 1272149717824033921}
     - targetCorrespondingSourceObject: {fileID: 6579140715543427374, guid: 4bd7742d2cb6a71479aa406d9a93f984,
@@ -360,32 +356,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7730301335520622322}
   m_PrefabAsset: {fileID: 0}
---- !u!143 &2680315768064865587
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3461651302724489180}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Height: 2
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1272149717824033921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -438,7 +408,7 @@ MonoBehaviour:
   _dashTime: 0.25
   _dashSpeed: 10
   _dashCooldown: 0.5
-  _trail: {fileID: 3707995527840022312}
+  _trail: {fileID: 5229150913708721736}
 --- !u!114 &5552383683661224857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -451,8 +421,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb8a2735ede9f94a9bf9cbacf85c932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeBetweenAttacks: 5
-  _foodValue: 10
+  _timeBetweenAttacks: 1
+  _foodValue: 50
   _projectilePrefab: {fileID: 7211987576673524156, guid: 02e9b54445128794dbed141fe2245680,
     type: 3}
 --- !u!212 &5413109387875353701 stripped

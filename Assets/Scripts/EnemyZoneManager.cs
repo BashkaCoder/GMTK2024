@@ -1,3 +1,4 @@
+using BananaForScale;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -15,10 +16,10 @@ public class EnemyZoneManager : MonoBehaviour
     [SerializeField] private int zonesMaxCount;
     private int _zonesCleared;
 
-    [Header("Totems")] 
+    [Header("Totems")]
     [SerializeField] private TotemIndicator _totemIndicator;
     
-    private Dictionary<EnemyType, EnemyZone> _zones;
+    private static Dictionary<EnemyType, EnemyZone> _zones;
 
     private void Start()
     {
@@ -40,10 +41,8 @@ public class EnemyZoneManager : MonoBehaviour
         _totemIndicator.UpdateImage(0);
     }
 
-    //Call when enemy fully feed
-    public void FeedEnemy(EnemyType type)
+    public static void IncreaseFullFeedEnemyCount(EnemyType type)
     {
-        //For now null
         _zones[type].AddScore();
     }
 
