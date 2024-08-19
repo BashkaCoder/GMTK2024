@@ -1,22 +1,24 @@
-using UnityEngine;
+using BananaForScale.Attributes;
 using BananaForScale.Combat;
 using BananaForScale.Movement;
+using System;
+using UnityEngine;
 
 namespace BananaForScale.Control
 {
     public class AIController : MonoBehaviour
     {
         [Header("Attack Behaviour")]
-        [SerializeField, Range(1f, 100f), Tooltip("пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ.")]
+        [SerializeField, Range(1f, 100f), Tooltip("Радиус обнаружения врага.")]
         private float _detectionRadius = 5f;
         [SerializeField] private float _allowedDistanceDeparture = 30f;
 
         private AIFighter _fighter;
         private GameObject _player;
-
         [Header("Suspition Behaviour")]
         [SerializeField] private float _suspicionTime = 5f;
         private float _timeSinceLastSawPlayer = Mathf.Infinity;
+        private Satiety _satiety;
 
         [Header("Patrol Behaviour")]
         [SerializeField] private PatrolPath _patrolPath;
@@ -33,6 +35,7 @@ namespace BananaForScale.Control
             _fighter = GetComponent<AIFighter>();
             _mover = GetComponent<AIMover>();
             _player = GameObject.FindWithTag("Player");
+            _satiety = GetComponent<Satiety>();
         }
 
         private void Start()
@@ -42,10 +45,11 @@ namespace BananaForScale.Control
 
         private void Update()
         {
-            // if (dobriy) {
-            // SuspitionBehaviour();
-            // return;
-            // }
+            if (!_satiety.IsHungry)
+            {
+                PatrolBehaviour();
+                return;
+            }
 
             if (InAttackRangeOfPlayer() &&
                 _fighter.CanAttack(_player) &&

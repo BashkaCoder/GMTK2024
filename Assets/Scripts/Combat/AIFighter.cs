@@ -59,7 +59,7 @@ namespace BananaForScale.Combat
         {
             // TODO: PLAY SOUND
 
-
+            print("TakeDamage");
             _target.TakeDamage(HitDamage);
         }
 

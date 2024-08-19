@@ -13,7 +13,8 @@ namespace BananaForScale.Attributes
         public float HealthPoints { get; private set; }
         public float MaxHealthPoints => _maxHealthPoints;
         public bool IsDead { get; private set; }
-
+        public bool IsInvulnerable { get; set; }
+        
         private void Awake()
         {
             HealthPoints = MaxHealthPoints;
@@ -21,6 +22,8 @@ namespace BananaForScale.Attributes
 
         public void TakeDamage(float damage)
         {
+            if (IsInvulnerable) return;
+
             HealthPoints = Mathf.Max(HealthPoints - damage, 0);
             if (HealthPoints == 0)
             {
@@ -33,10 +36,6 @@ namespace BananaForScale.Attributes
             }
         }
 
-        private void Update()
-        {
-            //print($"Health {HealthPoints}");
-        }
         private void Die()
         {
             if (IsDead) return;
