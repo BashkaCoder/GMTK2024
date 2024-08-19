@@ -11,12 +11,12 @@ PrefabInstance:
     - target: {fileID: 80173244415705339, guid: 51eb2cd2d43968b4ba0b777557bc3217,
         type: 3}
       propertyPath: m_Size.x
-      value: 1.92
+      value: 4.06
       objectReference: {fileID: 0}
     - target: {fileID: 80173244415705339, guid: 51eb2cd2d43968b4ba0b777557bc3217,
         type: 3}
       propertyPath: m_Size.y
-      value: 1.32
+      value: 2.43
       objectReference: {fileID: 0}
     - target: {fileID: 3326703672871430673, guid: 51eb2cd2d43968b4ba0b777557bc3217,
         type: 3}
@@ -42,17 +42,17 @@ PrefabInstance:
     - target: {fileID: 3905337731309716860, guid: 51eb2cd2d43968b4ba0b777557bc3217,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.2
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 3905337731309716860, guid: 51eb2cd2d43968b4ba0b777557bc3217,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.2
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 3905337731309716860, guid: 51eb2cd2d43968b4ba0b777557bc3217,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4155918100796815497, guid: 51eb2cd2d43968b4ba0b777557bc3217,
         type: 3}
@@ -99,6 +99,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Center.y
       value: 0.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 8314161241415977664, guid: 51eb2cd2d43968b4ba0b777557bc3217,
+        type: 3}
+      propertyPath: _maxSatietyPoints
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8396086372347601490, guid: 51eb2cd2d43968b4ba0b777557bc3217,
         type: 3}

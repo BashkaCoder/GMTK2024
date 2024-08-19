@@ -17,7 +17,7 @@ public class banana : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Wolf"))
         {
-            other.gameObject.GetComponent<hunger>().AddHunger(0.1f);
+            //other.gameObject.GetComponent<hunger3>().AddHunger(0.1f);
             Destroy(gameObject);
         }
     }
