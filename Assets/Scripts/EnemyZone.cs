@@ -1,65 +1,55 @@
-using System;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public enum EnemyType
 {
-    Wolf,
-    Boar,
-    Spider
+    MonkeyType1,
+    MonkeyType2,
+    MonkeyType3
 }
 
 public class EnemyZone : MonoBehaviour
 {
     private EnemyZoneManager _zoneManager;
-    
-    [Header("Enemy Settings")]
+
+    [Header("Enemy Settings")] 
     [SerializeField] private int maxEnemyCount;
     [SerializeField] private EnemyType enemyType;
-    
-    [Header("CollectablePrefab")]
-    [SerializeField] private GameObject collectable;
-    
-    private int _fedEnemyCount;
+
+    [Header("Zone Statistic")] 
+    [SerializeField] private GameObject totemObject;
+    [SerializeField] private ZoneView _zoneView;
+
     private BoxCollider _collider;
+    private Totem _totem;
+    private int _fedEnemyCount;
 
     public void Initialize(EnemyZoneManager zoneManager)
     {
         _zoneManager = zoneManager;
+        _totem.Initialize(this);
+        _totem.UpdateText(0, maxEnemyCount);
+        _zoneView.UpdateText(0, maxEnemyCount);
+        //Debug
+        AddScore();
     }
 
-    private void Start()
+    private void Awake()
     {
-        SpawnCollectible(transform);
+        _totem = totemObject.GetComponentInChildren<Totem>();
     }
 
-    public void AddScore(Transform enemyTransform)
+    public void AddScore()
     {
         if (++_fedEnemyCount == maxEnemyCount)
         {
-            SpawnCollectible(enemyTransform);
-            // Add Action to collectible
+            _totem.SetInteractionState(true);
         }
-    }
-    
-    //For enemy wandering
-    public Vector3 GetRandomPointInZone()
-    {
-        var bounds = _collider.bounds;
-        return new Vector3(
-            Random.Range(bounds.min.x, bounds.max.x),
-            Random.Range(bounds.min.y, bounds.max.y),
-            Random.Range(bounds.min.z, bounds.max.z)
-        );
+        _totem.UpdateText(_fedEnemyCount, maxEnemyCount);
+        _zoneView.UpdateText(_fedEnemyCount, maxEnemyCount);
     }
 
-    private void SpawnCollectible(Transform enemyTransform)
+    public void GatherKey()
     {
-        print("Collectable has been spawned");
-        var collectible = Instantiate(collectable, enemyTransform.position, Quaternion.identity).GetComponent<Collectible>();
-        collectible.CollectAction = () =>
-        {
-            _zoneManager.GatherCollectible();
-        };
+        _zoneManager.GatherCollectible();
     }
 }

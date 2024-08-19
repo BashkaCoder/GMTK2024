@@ -35,7 +35,7 @@ namespace BananaForScale.Attributes
 
         private void Update()
         {
-            print($"Health {HealthPoints}");
+            //print($"Health {HealthPoints}");
         }
         private void Die()
         {

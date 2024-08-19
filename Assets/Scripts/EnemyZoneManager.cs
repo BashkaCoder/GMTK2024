@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class EnemyZoneManager : MonoBehaviour
 {
@@ -9,40 +10,49 @@ public class EnemyZoneManager : MonoBehaviour
     [SerializeField] private EnemyZone spiderZone;
     [SerializeField] private BossZone _bossZone;
 
+    [FormerlySerializedAs("collectiblesMaxCount")]
     [Header("Collectibles")]
-    [SerializeField] private int collectiblesMaxCount;
-    private int _collectiblesGathered;
+    [SerializeField] private int zonesMaxCount;
+    private int _zonesCleared;
+
+    [Header("Totems")] 
+    [SerializeField] private TotemIndicator _totemIndicator;
     
     private Dictionary<EnemyType, EnemyZone> _zones;
 
     private void Start()
     {
+        _zonesCleared = 0;
+        
         _zones = new Dictionary<EnemyType, EnemyZone>()
         {
-            {EnemyType.Wolf, wolfZone},
-            {EnemyType.Boar, boarZone},
-            {EnemyType.Spider, spiderZone}
+            {EnemyType.MonkeyType1, wolfZone},
+            {EnemyType.MonkeyType2, boarZone},
+            {EnemyType.MonkeyType3, spiderZone}
         };
-
+        
         foreach (var pair in _zones)
         {
-            pair.Value.Initialize(this);
+            var zone = pair.Value;
+            zone.Initialize(this);
         }
         _bossZone.Initialize(this);
+        _totemIndicator.UpdateImage(0);
     }
 
     //Call when enemy fully feed
-    public void FeedEnemy(EnemyType type, Transform enemyTransform)
+    public void FeedEnemy(EnemyType type)
     {
         //For now null
-        _zones[type].AddScore(enemyTransform);
+        _zones[type].AddScore();
     }
 
     public void GatherCollectible()
     {
         print("Collectable gathered");
-        _collectiblesGathered++;
+        _zonesCleared++;
+        _totemIndicator.UpdateImage(_zonesCleared);
     }
 
-    public bool AllCollectiblesCollected() => _collectiblesGathered == collectiblesMaxCount;
+    public bool AllCollectiblesCollected() => _zonesCleared == zonesMaxCount;
 }
