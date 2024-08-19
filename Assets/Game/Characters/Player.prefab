@@ -139,7 +139,7 @@ TrailRenderer:
       atime6: 0
       atime7: 0
       m_Mode: 0
-      m_ColorSpace: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 0
@@ -326,9 +326,24 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 2330813285043778199, guid: 4bd7742d2cb6a71479aa406d9a93f984,
         type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2330813285043778199, guid: 4bd7742d2cb6a71479aa406d9a93f984,
+        type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2330813285043778199, guid: 4bd7742d2cb6a71479aa406d9a93f984,
+        type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2330813285043778199, guid: 4bd7742d2cb6a71479aa406d9a93f984,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 176ada761c14e604aabcddf7cfbd4f04, type: 2}
     - target: {fileID: 3022087691458424245, guid: 4bd7742d2cb6a71479aa406d9a93f984,
         type: 3}
       propertyPath: m_Sprite
