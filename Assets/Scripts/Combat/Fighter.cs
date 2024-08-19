@@ -1,3 +1,4 @@
+using BananaForScale.Attributes;
 using UnityEngine;
 
 namespace BananaForScale.Combat
@@ -10,17 +11,19 @@ namespace BananaForScale.Combat
         [SerializeField] private float _foodValue = 10f;
         [SerializeField] private Projectile _projectilePrefab;
         private Vector3 _direction;
+        private Health _health;
 
         private void Awake()
         {
             _animator = GetComponent<Animator>();
+            _health = GetComponent<Health>();
         }
 
         private void Update()
         {
             _timeSinceLastAttack += Time.deltaTime;
-
-            if (Input.GetMouseButton(0)) AttackBehaviour();
+            
+            if (!_health.IsDead && Input.GetMouseButton(0)) AttackBehaviour();
         }
 
         private void AttackBehaviour()

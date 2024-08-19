@@ -27,7 +27,7 @@ namespace BananaForScale.Movement
 
         private void Update()
         {
-            if (Input.GetKeyUp(_dashKeyCode))
+            if (!_health.IsDead && Input.GetKeyUp(_dashKeyCode))
             {
                 if (!_canDash) return;
                 StartCoroutine(DashCoroutine());

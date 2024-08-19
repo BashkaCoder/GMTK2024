@@ -48,6 +48,7 @@ namespace BananaForScale.Control
             if (!_satiety.IsHungry)
             {
                 PatrolBehaviour();
+                UpdateTimers();
                 return;
             }
 
@@ -133,6 +134,11 @@ namespace BananaForScale.Control
         {
             _timeSinceLastSawPlayer += Time.deltaTime;
             _timeSinceArrivedAtWaypoint += Time.deltaTime;
+        }
+
+        public void UpdateParameters(float growthMultiplier)
+        {
+            _detectionRadius *= growthMultiplier;
         }
 
         #region Debug

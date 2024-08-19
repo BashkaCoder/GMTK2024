@@ -7,15 +7,13 @@ namespace BananaForScale.Combat
 {
     public class AIFighter : MonoBehaviour, IAction
     {
-        #region Fields and Properties
         [SerializeField] private float _timeBetweenAttacks = 1f;
         private float _timeSinceLastAttack = Mathf.Infinity;
         private Animator _animator;
         private AIMover _mover;
         private Health _target;
-        [SerializeField] private float AttackRange = 2f;
-        [SerializeField] private float HitDamage = 2f;
-        #endregion
+        [SerializeField, Range(0, 20f)] private float _attackRange = 2f;
+        [SerializeField] private float _hitDamage = 2f;
 
         private void Awake()
         {
@@ -41,7 +39,7 @@ namespace BananaForScale.Combat
         }
 
         private bool GetIsInAttackRange(Transform target) =>
-            Vector3.Distance(transform.position, target.position) < AttackRange;
+            Vector3.Distance(transform.position, target.position) < _attackRange;
 
         private void AttackBehaviour()
         {
@@ -50,27 +48,14 @@ namespace BananaForScale.Combat
             if (_timeSinceLastAttack > _timeBetweenAttacks)
             {
                 Hit();
-                //TriggerAttack();
                 _timeSinceLastAttack = 0;
             }
         }
 
         private void Hit()
         {
-            // TODO: PLAY SOUND
-
-            print("TakeDamage");
-            _target.TakeDamage(HitDamage);
+            _target.TakeDamage(_hitDamage);
         }
-
-        //private void TriggerAttack()
-        //{
-        //    const string TriggerName1 = "StopAttack";
-        //    _animator.ResetTrigger(TriggerName1);
-
-        //    const string TriggerName2 = "Attack";
-        //    _animator.SetTrigger(TriggerName2);
-        //}
 
         public bool CanAttack(GameObject combatTarget)
         {
@@ -91,18 +76,22 @@ namespace BananaForScale.Combat
 
         public void Cancel()
         {
-            //StopAttack();
             _target = null;
             _mover.Cancel();
         }
 
-        //private void StopAttack()
-        //{
-        //    const string TriggerName1 = "Attack";
-        //    _animator.ResetTrigger(TriggerName1);
+        public void UpdateParameters(float growthMultiplier)
+        {
+            _attackRange *= growthMultiplier;
+            _hitDamage *= growthMultiplier;
+        }
 
-        //    const string TriggerName2 = "StopAttack";
-        //    _animator.SetTrigger(TriggerName2);
-        //}
+        #region Debug
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, _attackRange);
+        }
+        #endregion
     }
 }
