@@ -83,7 +83,7 @@ namespace BananaForScale.Combat
 
         public void UpdateParameters()
         {
-            _attackRange *= _growthMultiplier;
+            //_attackRange *= _growthMultiplier;
             _hitDamage *= _growthMultiplier;
         }
 

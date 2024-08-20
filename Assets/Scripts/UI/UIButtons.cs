@@ -10,17 +10,22 @@ namespace BananaForScale.UI
 
         private void Start()
         {
-            _quitButton.gameObject.SetActive(Application.platform != RuntimePlatform.WebGLPlayer);
+            if (_quitButton) _quitButton.gameObject.SetActive(Application.platform != RuntimePlatform.WebGLPlayer);
         }
 
         public void RestartGame()
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
 
         public void QuitGame()
         {
             Application.Quit();
+        }
+
+        public void Play()
+        {
+            SceneManager.LoadScene(1);
         }
     }
 }

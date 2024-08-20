@@ -681,6 +681,7 @@ MonoBehaviour:
   _speed: 6
   _sprite: {fileID: 5413109387875353701}
   _moveSound: {fileID: 9057385999737376490}
+  _soundDelay: 0.2
 --- !u!114 &6912168144813041018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -695,7 +696,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dashKeyCode: 32
   _dashTime: 0.25
-  _dashSpeed: 10
+  _dashSpeed: 15
   _dashCooldown: 0.5
   _trail: {fileID: 5229150913708721736}
 --- !u!114 &5552383683661224857
@@ -711,7 +712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timeBetweenAttacks: 1
-  _foodValue: 50
+  _foodValue: 20
   _projectilePrefab: {fileID: 7211987576673524156, guid: 02e9b54445128794dbed141fe2245680,
     type: 3}
 --- !u!212 &5413109387875353701 stripped

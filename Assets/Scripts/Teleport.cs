@@ -13,9 +13,9 @@ public class Teleport : MonoBehaviour
     public bool shouldEnableZoneView;
     public bool shouldCloseDoor;
 
-    private string canEnterText = "Press 'E' to enter area";
-    private string cannotEnterText = "You have to pray on altar";
-    
+    private string CanEnterText = "Press 'E' to enter area";
+    private string CannotEnterText = "You have to pray on altar";
+
     private void Start()
     {
         if (canEnter) GetComponent<SpriteRenderer>().sprite = _openDoorSprite;
@@ -23,13 +23,12 @@ public class Teleport : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag("Player"))
-            return;
+        if (!other.CompareTag("Player")) return;
 
-        _teleportText.gameObject.SetActive(true);
-        _teleportText.text = canEnter ? canEnterText : cannotEnterText;
+        _teleportText.transform.parent.gameObject.SetActive(true);
+        _teleportText.text = canEnter ? CanEnterText : CannotEnterText;
     }
-    
+
     private void OnTriggerStay(Collider other)
     {
         if (!other.CompareTag("Player"))
@@ -50,24 +49,23 @@ public class Teleport : MonoBehaviour
             }
         }
     }
-    
+
     private void OnTriggerExit(Collider other)
     {
-        if (!other.CompareTag("Player"))
-            return;
+        if (!other.CompareTag("Player")) return;
 
-        _teleportText.gameObject.SetActive(false);
+        _teleportText.transform.parent.gameObject.SetActive(false);
     }
-    
-    public void OperDoor() =>  GetComponent<SpriteRenderer>().sprite = _openDoorSprite;
+
+    public void OperDoor() => GetComponent<SpriteRenderer>().sprite = _openDoorSprite;
 
     public void CloseDoor()
     {
         GetComponent<SpriteRenderer>().sprite = _closedDoorSprite;
         _correspondingTeleport.canEnter = false;
         canEnter = false;
-        cannotEnterText = "You've complete the dungeon";
-        _correspondingTeleport.cannotEnterText = cannotEnterText = "You've complete the dungeon";
+        CannotEnterText = "You've complete the dungeon";
+        _correspondingTeleport.CannotEnterText = CannotEnterText = "You've complete the dungeon";
         ZoneView.Instance.gameObject.SetActive(false);
     }
 }

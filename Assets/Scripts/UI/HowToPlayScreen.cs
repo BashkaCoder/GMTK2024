@@ -11,10 +11,6 @@ namespace BananaForScale.UI
         private void Awake()
         {
             _player = GameObject.FindWithTag("Player");
-        }
-
-        private void Start()
-        {
             transform.GetChild(0).gameObject.SetActive(true);
             SwitchPlayer(false);
         }
@@ -32,6 +28,7 @@ namespace BananaForScale.UI
         {
             _player.GetComponent<PlayerMover>().enabled = enabled;
             _player.GetComponent<Fighter>().enabled = enabled;
+            _player.GetComponent<Dash>().enabled = enabled;
         }
     }
 }
