@@ -196,7 +196,7 @@ MonoBehaviour:
     Tobe Spahn - Sound Designer/ Music'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1483,7 +1483,7 @@ MonoBehaviour:
   m_text: Thx for playing
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1686,7 +1686,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1686203868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6094,6 +6094,7 @@ MonoBehaviour:
   _sprite: {fileID: 4582673436465302148}
   _moveSound: {fileID: 663607971166011403}
   _soundDelay: 0.2
+  _slices: {fileID: 0}
 --- !u!212 &3696321335844717224
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7815,7 +7816,7 @@ Transform:
   m_GameObject: {fileID: 3571359957382597767}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 98.67}
+  m_LocalPosition: {x: 64.2, y: 0, z: 109.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
