@@ -1,3 +1,4 @@
+using System;
 using BananaForScale;
 using BananaForScale.Attributes;
 using UnityEngine;
@@ -22,7 +23,7 @@ public class EnemyZone : MonoBehaviour
     {
         _totem = totemObject.GetComponentInChildren<Totem>();
     }
-
+    
     private int CalculateEnemyCount()
     {
         int enemyCount = 0;
@@ -51,6 +52,11 @@ public class EnemyZone : MonoBehaviour
         }
         _totem.UpdateText(_fedEnemyCount, _enemyCount);
         _zoneView.UpdateText(_fedEnemyCount, _enemyCount);
+    }
+
+    public void UpdateZoneView()
+    {
+        _zoneView.UpdateText(0, _enemyCount);
     }
 
     public void GatherKey()

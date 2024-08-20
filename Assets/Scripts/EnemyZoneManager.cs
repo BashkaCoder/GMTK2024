@@ -36,7 +36,6 @@ public class EnemyZoneManager : MonoBehaviour
             var zone = pair.Value;
             zone.Initialize(this);
         }
-        _totemIndicator.UpdateImage(0);
     }
 
     public static void IncreaseFullFeedEnemyCount(EnemyType type)
@@ -50,6 +49,4 @@ public class EnemyZoneManager : MonoBehaviour
         _zonesCleared++;
         _totemIndicator.UpdateImage(_zonesCleared);
     }
-
-    public static bool AllCollectiblesCollected() => _zonesCleared == zonesMaxCount;
 }

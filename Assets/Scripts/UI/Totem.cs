@@ -13,6 +13,7 @@ public class Totem : MonoBehaviour
 
     public void Initialize(EnemyZone zone)
     {
+        
         _zone = zone;
     }
 
@@ -50,6 +51,8 @@ public class Totem : MonoBehaviour
             interactionText.gameObject.SetActive(false);
             _canInteract = false;
             _teleportToOpen.canEnter = true;
+            _teleportToOpen.OperDoor();
+            //_zone.TriggerZoneView();
         }
     }
 
