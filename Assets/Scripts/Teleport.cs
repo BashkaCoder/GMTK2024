@@ -61,6 +61,7 @@ public class Teleport : MonoBehaviour
 
     public void CloseDoor()
     {
+        
         GetComponent<SpriteRenderer>().sprite = _closedDoorSprite;
         _correspondingTeleport.canEnter = false;
         canEnter = false;
