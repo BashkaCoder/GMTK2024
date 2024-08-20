@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Teleport : MonoBehaviour
 {
@@ -46,6 +47,11 @@ public class Teleport : MonoBehaviour
             if (shouldCloseDoor)
             {
                 _correspondingTeleport.CloseDoor();
+            }
+
+            if (EnemyZoneManager.AllZonesCleared())
+            {
+                SceneManager.LoadScene(2);
             }
         }
     }

@@ -12,8 +12,8 @@ public class EnemyZoneManager : MonoBehaviour
 
     [FormerlySerializedAs("collectiblesMaxCount")]
     [Header("Collectibles")]
-    [SerializeField] private static int zonesMaxCount;
-    private static int _zonesCleared;
+    private static int zonesMaxCount;
+    public static int _zonesCleared;
 
     [Header("Totems")]
     [SerializeField] private TotemIndicator _totemIndicator;
@@ -22,6 +22,7 @@ public class EnemyZoneManager : MonoBehaviour
 
     private void Start()
     {
+        zonesMaxCount = 3;
         _zonesCleared = 0;
         
         _zones = new Dictionary<EnemyType, EnemyZone>()
@@ -48,5 +49,10 @@ public class EnemyZoneManager : MonoBehaviour
         print("Collectable gathered");
         _zonesCleared++;
         _totemIndicator.UpdateImage(_zonesCleared);
+    }
+
+    public static bool AllZonesCleared()
+    {
+        return _zonesCleared == zonesMaxCount;
     }
 }

@@ -45,6 +45,7 @@ public class Totem : MonoBehaviour
 
         if (_canInteract && Input.GetKeyDown(KeyCode.E))
         {
+            //EnemyZoneManager._zonesCleared++;
             _zone.GatherKey();
             _keyGathered = true;
             interactionText.gameObject.SetActive(false);

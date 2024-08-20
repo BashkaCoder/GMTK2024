@@ -2346,6 +2346,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 59.54
       objectReference: {fileID: 0}
+    - target: {fileID: 630859862449092442, guid: 01874630a9330c74897991f3aa40e265,
+        type: 3}
+      propertyPath: field of view
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 759029068653552801, guid: 01874630a9330c74897991f3aa40e265,
+        type: 3}
+      propertyPath: m_Lens.FieldOfView
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 1055698162754250045, guid: 01874630a9330c74897991f3aa40e265,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2399,7 +2409,17 @@ PrefabInstance:
     - target: {fileID: 2318051056640875916, guid: 01874630a9330c74897991f3aa40e265,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 59.54
+      value: 64.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 2318051056640875916, guid: 01874630a9330c74897991f3aa40e265,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.6178765
+      objectReference: {fileID: 0}
+    - target: {fileID: 2318051056640875916, guid: 01874630a9330c74897991f3aa40e265,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 61.22956
       objectReference: {fileID: 0}
     - target: {fileID: 2373253487253373287, guid: 01874630a9330c74897991f3aa40e265,
         type: 3}
@@ -2409,7 +2429,27 @@ PrefabInstance:
     - target: {fileID: 3335646587327043100, guid: 01874630a9330c74897991f3aa40e265,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 59.54
+      value: 64.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 3335646587327043100, guid: 01874630a9330c74897991f3aa40e265,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.6178765
+      objectReference: {fileID: 0}
+    - target: {fileID: 3335646587327043100, guid: 01874630a9330c74897991f3aa40e265,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 61.22956
+      objectReference: {fileID: 0}
+    - target: {fileID: 5155954658443106567, guid: 01874630a9330c74897991f3aa40e265,
+        type: 3}
+      propertyPath: m_TrackedObjectOffset.x
+      value: 4.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 5155954658443106567, guid: 01874630a9330c74897991f3aa40e265,
+        type: 3}
+      propertyPath: m_TrackedObjectOffset.z
+      value: 1.29
       objectReference: {fileID: 0}
     - target: {fileID: 8952464079119360629, guid: 01874630a9330c74897991f3aa40e265,
         type: 3}
