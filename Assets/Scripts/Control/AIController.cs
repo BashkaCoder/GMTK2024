@@ -30,6 +30,8 @@ namespace BananaForScale.Control
         private AIMover _mover;
         private Vector3 _guardPosition;
 
+        [SerializeField] private float _growthMultiplier = 1.2f;
+
         private void Awake()
         {
             _fighter = GetComponent<AIFighter>();
@@ -136,9 +138,9 @@ namespace BananaForScale.Control
             _timeSinceArrivedAtWaypoint += Time.deltaTime;
         }
 
-        public void UpdateParameters(float growthMultiplier)
+        public void UpdateParameters()
         {
-            _detectionRadius *= growthMultiplier;
+            _detectionRadius *= _growthMultiplier;
         }
 
         #region Debug

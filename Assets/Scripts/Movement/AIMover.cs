@@ -7,6 +7,7 @@ namespace BananaForScale.Movement
     {
         [SerializeField] private Transform _target;
         [SerializeField] private float _maxSpeed = 6f;
+        [SerializeField] private float _growthMultiplier = 0.9f;
         private NavMeshAgent _navMeshAgent;
 
         private void Awake()
@@ -41,6 +42,11 @@ namespace BananaForScale.Movement
         public void Cancel()
         {
             _navMeshAgent.isStopped = true;
+        }
+
+        public void UpdateParameters()
+        {
+            _maxSpeed *= _growthMultiplier;
         }
     }
 }

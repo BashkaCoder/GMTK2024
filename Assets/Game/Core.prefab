@@ -1207,8 +1207,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TrackedObjectOffset: {x: 0, y: 0, z: 0}
-  m_LookaheadTime: 0
-  m_LookaheadSmoothing: 0
+  m_LookaheadTime: 0.3
+  m_LookaheadSmoothing: 20
   m_LookaheadIgnoreY: 0
   m_XDamping: 1
   m_YDamping: 1
@@ -1217,12 +1217,12 @@ MonoBehaviour:
   m_ScreenX: 0.5
   m_ScreenY: 0.5
   m_CameraDistance: 10
-  m_DeadZoneWidth: 0
-  m_DeadZoneHeight: 0
+  m_DeadZoneWidth: 0.08
+  m_DeadZoneHeight: 0.1
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
-  m_SoftZoneWidth: 0.8
-  m_SoftZoneHeight: 0.8
+  m_SoftZoneWidth: 0.15
+  m_SoftZoneHeight: 0.15
   m_BiasX: 0
   m_BiasY: 0
   m_CenterOnActivate: 1
@@ -2551,6 +2551,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1055698162754250045}
     m_Modifications:
+    - target: {fileID: 528026195158097482, guid: 6f6e38a580c9e9a41bf92600bf1547c6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 628918308507678638, guid: 6f6e38a580c9e9a41bf92600bf1547c6,
         type: 3}
       propertyPath: m_Size.y
@@ -2579,7 +2584,7 @@ PrefabInstance:
     - target: {fileID: 1272149717824033921, guid: 6f6e38a580c9e9a41bf92600bf1547c6,
         type: 3}
       propertyPath: _onTakeDamage.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1272149717824033921, guid: 6f6e38a580c9e9a41bf92600bf1547c6,
         type: 3}
@@ -2628,6 +2633,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1272149717824033921, guid: 6f6e38a580c9e9a41bf92600bf1547c6,
         type: 3}
+      propertyPath: _onTakeDamage.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1272149717824033921, guid: 6f6e38a580c9e9a41bf92600bf1547c6,
+        type: 3}
+      propertyPath: _onTakeDamage.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1272149717824033921, guid: 6f6e38a580c9e9a41bf92600bf1547c6,
+        type: 3}
       propertyPath: _onTakeDamage.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 658452376683839494}
@@ -2636,6 +2651,11 @@ PrefabInstance:
       propertyPath: _onTakeDamage.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 5697897090457684890}
+    - target: {fileID: 1272149717824033921, guid: 6f6e38a580c9e9a41bf92600bf1547c6,
+        type: 3}
+      propertyPath: _onTakeDamage.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 6290709628808874971}
     - target: {fileID: 1272149717824033921, guid: 6f6e38a580c9e9a41bf92600bf1547c6,
         type: 3}
       propertyPath: _onTakeDamage.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -2648,6 +2668,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1272149717824033921, guid: 6f6e38a580c9e9a41bf92600bf1547c6,
         type: 3}
+      propertyPath: _onTakeDamage.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1272149717824033921, guid: 6f6e38a580c9e9a41bf92600bf1547c6,
+        type: 3}
       propertyPath: _onTakeDamage.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: UpdateBar
       objectReference: {fileID: 0}
@@ -2655,6 +2680,11 @@ PrefabInstance:
         type: 3}
       propertyPath: _onTakeDamage.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: SpawnPopupText
+      objectReference: {fileID: 0}
+    - target: {fileID: 1272149717824033921, guid: 6f6e38a580c9e9a41bf92600bf1547c6,
+        type: 3}
+      propertyPath: _onTakeDamage.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: Play
       objectReference: {fileID: 0}
     - target: {fileID: 1272149717824033921, guid: 6f6e38a580c9e9a41bf92600bf1547c6,
         type: 3}
@@ -2688,6 +2718,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1272149717824033921, guid: 6f6e38a580c9e9a41bf92600bf1547c6,
         type: 3}
+      propertyPath: _onTakeDamage.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: UnityEngine.AudioSource, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1272149717824033921, guid: 6f6e38a580c9e9a41bf92600bf1547c6,
+        type: 3}
       propertyPath: _onDie.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
@@ -2705,6 +2740,16 @@ PrefabInstance:
         type: 3}
       propertyPath: _onTakeDamage.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1272149717824033921, guid: 6f6e38a580c9e9a41bf92600bf1547c6,
+        type: 3}
+      propertyPath: _onTakeDamage.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2579085292439084544, guid: 6f6e38a580c9e9a41bf92600bf1547c6,
+        type: 3}
+      propertyPath: m_Volume
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2680315768064865587, guid: 6f6e38a580c9e9a41bf92600bf1547c6,
         type: 3}
@@ -2806,6 +2851,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b76f5b42b4ebea74c9661f45dd2daf76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &6290709628808874971 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2579085292439084544, guid: 6f6e38a580c9e9a41bf92600bf1547c6,
+    type: 3}
+  m_PrefabInstance: {fileID: 8396916954728519131}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &7286896863218729306 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1272149717824033921, guid: 6f6e38a580c9e9a41bf92600bf1547c6,

@@ -14,6 +14,7 @@ namespace BananaForScale.Combat
         private Health _target;
         [SerializeField, Range(0, 20f)] private float _attackRange = 2f;
         [SerializeField] private float _hitDamage = 2f;
+        [SerializeField] private float _growthMultiplier = 1.2f;
 
         private void Awake()
         {
@@ -80,10 +81,10 @@ namespace BananaForScale.Combat
             _mover.Cancel();
         }
 
-        public void UpdateParameters(float growthMultiplier)
+        public void UpdateParameters()
         {
-            _attackRange *= growthMultiplier;
-            _hitDamage *= growthMultiplier;
+            _attackRange *= _growthMultiplier;
+            _hitDamage *= _growthMultiplier;
         }
 
         #region Debug
