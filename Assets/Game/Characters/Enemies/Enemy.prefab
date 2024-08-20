@@ -839,7 +839,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b21a8fa9c7ae3f449bb4367c313ee46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _detectionRadius: 8
+  _detectionRadius: 10
   _allowedDistanceDeparture: 30
   _suspicionTime: 5
   _patrolPath: {fileID: 2578901505289494907}
@@ -876,8 +876,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _timeBetweenAttacks: 2
   _attackRange: 2
-  _hitDamage: 10
-  _growthMultiplier: 1.2
+  _hitDamage: 2
+  _growthMultiplier: 1.1
 --- !u!114 &8314161241415977664
 MonoBehaviour:
   m_ObjectHideFlags: 0

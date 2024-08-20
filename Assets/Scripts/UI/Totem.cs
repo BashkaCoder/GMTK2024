@@ -13,7 +13,6 @@ public class Totem : MonoBehaviour
 
     public void Initialize(EnemyZone zone)
     {
-        
         _zone = zone;
     }
 
