@@ -14,6 +14,7 @@ namespace BananaForScale.Combat
         private Vector3 _direction;
         private float _foodValue;
         private Satiety _target;
+        [SerializeField] private AudioSource _shootSound; 
 
         public void SetTarget(Vector3 direction, float foodValue)
         {
@@ -27,8 +28,7 @@ namespace BananaForScale.Combat
         {
             transform.LookAt(_direction);
             transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
-            //print();
-            //transform.position = _direction;
+            _shootSound.Play();
         }
 
         private void Update()

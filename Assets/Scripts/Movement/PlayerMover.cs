@@ -10,8 +10,11 @@ namespace BananaForScale.Movement
         private Rigidbody _rigidbody;
         private Health _health;
         [SerializeField] private SpriteRenderer _sprite;
+        [SerializeField] private AudioSource _moveSound;
+        [SerializeField] private float _soundDelay = 0.2f;
 
         public Vector3 Direction => new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized;
+        private bool IsStopped => Direction != Vector3.zero;
 
         private void Awake()
         {
@@ -29,6 +32,7 @@ namespace BananaForScale.Movement
         {
             _rigidbody.MovePosition(_rigidbody.position + direction);
             RotateSprite();
+            PlayMoveSound();
         }
 
         private void RotateSprite()
@@ -41,6 +45,14 @@ namespace BananaForScale.Movement
             else if (horisontal != 0 && horisontal > 0)
             {
                 _sprite.flipX = false;
+            }
+        }
+
+        private void PlayMoveSound()
+        {
+            if (IsStopped && !_moveSound.isPlaying)
+            {
+                _moveSound.PlayDelayed(_soundDelay);
             }
         }
     }
