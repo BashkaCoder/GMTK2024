@@ -9,9 +9,11 @@ namespace BananaForScale.Movement
         [SerializeField] private float _speed = 10f;
         private Rigidbody _rigidbody;
         private Health _health;
+        private Animator _animator;
         [SerializeField] private SpriteRenderer _sprite;
         [SerializeField] private AudioSource _moveSound;
         [SerializeField] private float _soundDelay = 0.2f;
+        [SerializeField] private GameObject _slices;
 
         public Vector3 Direction => new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized;
         private bool IsStopped => Direction != Vector3.zero;
@@ -20,6 +22,7 @@ namespace BananaForScale.Movement
         {
             _rigidbody = GetComponent<Rigidbody>();
             _health = GetComponent<Health>();
+            _animator = GetComponentInChildren<Animator>();
         }
 
         private void Update()
@@ -33,6 +36,7 @@ namespace BananaForScale.Movement
             _rigidbody.MovePosition(_rigidbody.position + direction);
             RotateSprite();
             PlayMoveSound();
+            _animator.SetFloat("Horizontal", Mathf.Abs(direction.x));
         }
 
         private void RotateSprite()
@@ -40,10 +44,12 @@ namespace BananaForScale.Movement
             var horisontal = Input.GetAxis("Horizontal");
             if (horisontal != 0 && horisontal < 0)
             {
+                FlipScale(true);
                 _sprite.flipX = true;
             }
             else if (horisontal != 0 && horisontal > 0)
             {
+                FlipScale(false);
                 _sprite.flipX = false;
             }
         }
@@ -54,6 +60,13 @@ namespace BananaForScale.Movement
             {
                 _moveSound.PlayDelayed(_soundDelay);
             }
+        }
+        
+        private void FlipScale(bool flip)
+        {
+            Vector3 localScale = _slices.transform.localScale;
+            localScale.x = flip ? -Mathf.Abs(localScale.x) : Mathf.Abs(localScale.x);
+            _slices.transform.localScale = localScale;
         }
     }
 }
